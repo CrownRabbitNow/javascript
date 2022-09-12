@@ -1,0 +1,137 @@
+<script language="javascript">
+/*
+Diketahui:
+pegawai: Ridwan
+jabatan: manager
+status: menikah 
+Tugas: 
+Cetak Data Pegawai berbentuk tabel:
+Judul Kolom gunakan thead
+Data2 gunakan tbody 
+Nama Pegawai, Jabatan, Status, 
+Gaji Pokok(if): Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt 
+Tunjangan Jabatan: 15% dari gapok
+BPJS: 10% dari gapok
+Tunjangan Keluarga (ternary): dilihat dari status yg sudah menikah =>20% dari gapok
+Total Gaji: jumlahlahkan seluruh element gaji (gunakan tfoot)
+Format pengumpulan tugas:
+Disimpan di githubnya masing2:
+contoh:
+buat repo baru (javascript) -> file tugas di push di repo tsb
+lalu linknya dlm txt di assign ke LMS
+*/
+
+// Jawaban
+
+// variabel dan tipe data
+
+var pegawai = "Ridwan";
+var jabatan = "Manager";
+var status = "Menikah";
+
+// Gaji Pokok(if): Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt
+if (jabatan == 'Manager') {
+    gapok = 15000000;
+} else if(jabatan == 'Asisten Manager') {
+    gapok = 10000000;
+} else if(jabatan == 'Staff') {
+    gapok = 5000000;
+} else{
+    gapok = 0;
+}
+
+let tunja = 0.15 * gapok;
+let bpjs = 0.10 * gapok;
+
+let tunjanganKeluarga = (status == 'Menikah') ? 0.20 * gapok : 0;
+let toga = gapok + tunja + bpjs + tunjanganKeluarga;
+
+// cetak
+    document.write("Cetak Data Pegawai dengan Tabel" +
+        "<br/>Pegawai: " + pegawai +
+        "<br/>Jabatan: " + jabatan +
+        "<br/>Status: " + status);
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr align="center">
+                <td>Nama Pegawai</td>
+                <td>Jabatan</td>
+                <td>Status</td>
+                <td>Gaji Pokok</td>
+                <td>Tunjungan Jabatan</td>
+                <td>BPJS</td>
+                <td>Tunjangan Keluarga</td>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <tr>
+                <td>
+                    <script>
+
+                        document.write(pegawai);
+                    </script>
+                </td>
+                <td>
+                    <script>
+
+                        document.write(jabatan);
+                    </script>
+                </td>
+                <td>
+                    <script>
+
+                        document.write(status);
+                    </script>
+                </td>
+                <td>
+                    <script>
+
+                        document.write(gapok);
+                    </script>
+                </td>
+                <td>
+                    <script>
+
+                        document.write(tunja);
+                    </script>
+                </td>
+                <td>
+                    <script>
+
+                        document.write(bpjs);
+                    </script>
+                </td>
+                <td>
+                    <script>
+
+                        document.write(tunjanganKeluarga);
+                    </script>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot align="center">
+            <tr>
+                <td>Total Gaji</td>
+                <td colspan="6">
+                    <script>
+                        document.write(toga);
+                    </script>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
